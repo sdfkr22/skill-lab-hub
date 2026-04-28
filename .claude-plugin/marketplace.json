@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skill-lab-hub",
+  "owner": {
+    "name": "Sedef Akkoc",
+    "email": "sedefakkoc@gmail.com"
+  },
+  "metadata": {
+    "description": "Personal Claude Code skills collection",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "skill-lab-hub",
+      "description": "Personal skills: Turkish token-saving hybrid mode and session-based GitHub bug reporter",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/session-bug-hunter",
+        "./skills/turkce-token-tasarrufu"
+      ]
+    }
+  ]
+}
