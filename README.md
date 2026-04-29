@@ -13,7 +13,7 @@ In Claude Code:
 
 ```
 /plugin marketplace add sdfkr22/skill-lab-hub
-/plugin install skill-lab-hub@skill-lab-hub
+/plugin install pack@skill-lab-hub
 ```
 
 For local development, point the marketplace at a clone instead:
