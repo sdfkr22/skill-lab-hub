@@ -4,7 +4,7 @@ A personal [Claude Code](https://claude.ai/code) plugin marketplace. Contains a 
 
 ## What is this?
 
-Claude Code supports **plugins** — bundles of skills, commands, hooks, and agents you can install with one command. This repo is a *marketplace* (a catalog of plugins) shipping a single plugin (`pack`) that contains all the skills below.
+Claude Code supports **plugins** — bundles of skills, commands, hooks, and agents you can install with one command. This repo is a *marketplace* (a catalog of plugins) shipping each skill both as a standalone plugin and bundled together in `pack`.
 
 ## Skills
 
@@ -17,14 +17,30 @@ Click a row for full docs and usage examples.
 
 ## Install
 
-In Claude Code, run:
+First, add the marketplace (once):
 
 ```
 /plugin marketplace add sdfkr22/skill-lab-hub
+```
+
+**Install everything at once:**
+
+```
 /plugin install pack@skill-lab-hub
 ```
 
-Then `/reload-plugins`. Skills become available under the `pack:` namespace (e.g. `pack:session-bug-hunter`).
+Skills become available under the `pack:` namespace (e.g. `pack:session-bug-hunter`).
+
+**Install a single skill:**
+
+```
+/plugin install turkce-token-tasarrufu@skill-lab-hub
+/plugin install session-bug-hunter@skill-lab-hub
+```
+
+Each standalone plugin exposes its skill under its own namespace (e.g. `turkce-token-tasarrufu:turkce-token-tasarrufu`).
+
+Then `/reload-plugins` after any install.
 
 For local development, point the marketplace at a clone instead:
 
@@ -53,10 +69,11 @@ For local development, point the marketplace at a clone instead:
 ## Adding a new skill
 
 1. Create `skills/<skill-name>/SKILL.md` with frontmatter (`name`, `description`).
-2. Add `"./skills/<skill-name>"` to the `skills` array in `.claude-plugin/marketplace.json`.
-3. Bump the plugin `version` (and optionally `metadata.version`) in the same file.
-4. Commit and push.
-5. In Claude Code: `/plugin marketplace update skill-lab-hub` then `/plugin install pack@skill-lab-hub` to refresh.
+2. Add `"./skills/<skill-name>"` to the `skills` array of the `pack` plugin in `.claude-plugin/marketplace.json`.
+3. Optionally add a standalone plugin entry for the skill so users can install it individually.
+4. Bump the plugin `version` (and optionally `metadata.version`) in the same file.
+5. Commit and push.
+6. In Claude Code: `/plugin marketplace update skill-lab-hub` then `/plugin install pack@skill-lab-hub` to refresh.
 
 ## Contributing
 

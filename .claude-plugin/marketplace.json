@@ -20,6 +20,26 @@
         "./skills/session-bug-hunter",
         "./skills/turkce-token-tasarrufu"
       ]
+    },
+    {
+      "name": "turkce-token-tasarrufu",
+      "version": "0.1.0",
+      "description": "Turkish token-saving hybrid mode — Türkçe konuşmalarda token kullanımını azaltır",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/turkce-token-tasarrufu"
+      ]
+    },
+    {
+      "name": "session-bug-hunter",
+      "version": "0.1.0",
+      "description": "Session-based GitHub bug reporter — oturum boyunca hataları tespit edip GitHub issue açar",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/session-bug-hunter"
+      ]
     }
   ]
 }
