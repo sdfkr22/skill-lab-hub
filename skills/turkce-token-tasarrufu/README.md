@@ -13,15 +13,15 @@ Türkçe'nin sondan eklemeli yapısı ve `ğçşıöü` gibi non-ASCII karakterl
 
 ## Kurulum
 
-Claude Code'da skill yüklemek için:
+Bu skill, [`skill-lab-hub`](https://github.com/sdfkr22/skill-lab-hub) plugin marketplace'i içinde dağıtılıyor. Claude Code'da:
 
-```bash
-# Skill'leri tutan klasöre kopyala
-mkdir -p ~/.claude/skills
-cp -r turkce-token-tasarrufu ~/.claude/skills/
+```
+/plugin marketplace add sdfkr22/skill-lab-hub
+/plugin install pack@skill-lab-hub
+/reload-plugins
 ```
 
-Sonra Claude Code'u yeniden başlat. Skill artık otomatik olarak Türkçe mesajlarda devreye girecek.
+Sonra Türkçe yazmaya başla — skill otomatik devreye girer (`pack:turkce-token-tasarrufu`).
 
 ## Token ölçüm scripti
 

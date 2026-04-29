@@ -71,17 +71,15 @@ You: 1,2
 
 ## Install
 
-**Option A — Global (available in all projects):**
-```bash
-gh repo clone sdfkr22/session-bug-hunter ~/.claude/skills/session-bug-hunter
+This skill ships as part of the [`skill-lab-hub`](https://github.com/sdfkr22/skill-lab-hub) plugin marketplace. In Claude Code:
+
+```
+/plugin marketplace add sdfkr22/skill-lab-hub
+/plugin install pack@skill-lab-hub
+/reload-plugins
 ```
 
-**Option B — Project-scoped (shared with your team via git):**
-```bash
-gh repo clone sdfkr22/session-bug-hunter .claude/skills/session-bug-hunter
-```
-
-Start a new Claude Code session — the skill loads automatically.
+Trigger it with `pack:session-bug-hunter` or just talk naturally (see *Usage* below).
 
 ---
 
