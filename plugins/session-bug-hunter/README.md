@@ -75,17 +75,11 @@ This skill ships as part of the [`skill-lab-hub`](https://github.com/sdfkr22/ski
 
 ```
 /plugin marketplace add sdfkr22/skill-lab-hub
-/plugin install pack@skill-lab-hub
+/plugin install session-bug-hunter@skill-lab-hub
 /reload-plugins
 ```
 
-Or install just this skill standalone:
-
-```
-/plugin install session-bug-hunter@skill-lab-hub
-```
-
-Trigger it with `pack:session-bug-hunter` or just talk naturally (see *Usage* below).
+Trigger it by talking naturally (see *Usage* below).
 
 ---
 

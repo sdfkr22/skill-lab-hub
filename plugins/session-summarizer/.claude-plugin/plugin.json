@@ -1,0 +1,9 @@
+{
+  "name": "session-summarizer",
+  "version": "0.1.0",
+  "description": "Session summarizer — produces a structured summary of the current session covering actions taken, decisions, open questions, and next steps",
+  "author": {
+    "name": "sdfkr22",
+    "email": "sedefakkoc@gmail.com"
+  }
+}

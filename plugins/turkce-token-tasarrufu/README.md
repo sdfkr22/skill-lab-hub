@@ -17,17 +17,11 @@ This skill ships as part of the [`skill-lab-hub`](https://github.com/sdfkr22/ski
 
 ```
 /plugin marketplace add sdfkr22/skill-lab-hub
-/plugin install pack@skill-lab-hub
+/plugin install turkce-token-tasarrufu@skill-lab-hub
 /reload-plugins
 ```
 
-Or install just this skill standalone:
-
-```
-/plugin install turkce-token-tasarrufu@skill-lab-hub
-```
-
-Then start writing in Turkish — the skill triggers automatically (`pack:turkce-token-tasarrufu`).
+Then start writing in Turkish — the skill triggers automatically.
 
 ## Token measurement script
 

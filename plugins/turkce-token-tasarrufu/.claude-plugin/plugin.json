@@ -1,0 +1,9 @@
+{
+  "name": "turkce-token-tasarrufu",
+  "version": "0.1.0",
+  "description": "Turkish token-saving hybrid mode — reduces token usage in Turkish conversations by keeping internal work in English",
+  "author": {
+    "name": "sdfkr22",
+    "email": "sedefakkoc@gmail.com"
+  }
+}

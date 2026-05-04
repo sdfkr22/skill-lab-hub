@@ -1,0 +1,9 @@
+{
+  "name": "session-bug-hunter",
+  "version": "0.1.0",
+  "description": "Session-based GitHub bug reporter — detects issues throughout the session and opens GitHub issues",
+  "author": {
+    "name": "sdfkr22",
+    "email": "sedefakkoc@gmail.com"
+  }
+}
