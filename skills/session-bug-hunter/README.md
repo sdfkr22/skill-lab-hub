@@ -79,6 +79,12 @@ This skill ships as part of the [`skill-lab-hub`](https://github.com/sdfkr22/ski
 /reload-plugins
 ```
 
+Or install just this skill standalone:
+
+```
+/plugin install session-bug-hunter@skill-lab-hub
+```
+
 Trigger it with `pack:session-bug-hunter` or just talk naturally (see *Usage* below).
 
 ---

@@ -1,19 +1,19 @@
-# Türkçe Token Tasarrufu Skill
+# Turkish Token Saver Skill
 
-Türkçe Claude Code oturumlarında token tüketimini ~%40-50 düşüren bir skill.
+A Claude Code skill that cuts token usage by ~40-50% in Turkish sessions.
 
-## Nasıl çalışır
+## How it works
 
-Hibrit dil stratejisi uygular:
+Applies a hybrid language strategy:
 
-- **İngilizce**: Kod, yorumlar, commit mesajları, log/debug, planlama, tool açıklamaları, dosya/değişken isimleri
-- **Türkçe**: Sadece kullanıcıya yönelik özet, soru, sohbet
+- **English**: code, comments, commit messages, logs/debug, planning, tool descriptions, file/variable names
+- **Turkish**: only user-facing summaries, questions, and chat
 
-Türkçe'nin sondan eklemeli yapısı ve `ğçşıöü` gibi non-ASCII karakterleri tokenizer'da fazla token tüketiyor. İçeride İngilizce kalmak ciddi tasarruf sağlıyor; dışarısı Türkçe kaldığı için kullanıcı deneyimi de korunuyor.
+Turkish is agglutinative and contains non-ASCII characters (`ğçşıöü`) that consume extra tokens in BPE tokenizers. Keeping the internal work in English yields significant savings while preserving the user experience by keeping the conversation in Turkish.
 
-## Kurulum
+## Install
 
-Bu skill, [`skill-lab-hub`](https://github.com/sdfkr22/skill-lab-hub) plugin marketplace'i içinde dağıtılıyor. Claude Code'da:
+This skill ships as part of the [`skill-lab-hub`](https://github.com/sdfkr22/skill-lab-hub) plugin marketplace. In Claude Code:
 
 ```
 /plugin marketplace add sdfkr22/skill-lab-hub
@@ -21,51 +21,57 @@ Bu skill, [`skill-lab-hub`](https://github.com/sdfkr22/skill-lab-hub) plugin mar
 /reload-plugins
 ```
 
-Sonra Türkçe yazmaya başla — skill otomatik devreye girer (`pack:turkce-token-tasarrufu`).
+Or install just this skill standalone:
 
-## Token ölçüm scripti
-
-`scripts/token_check.py` Türkçe vs İngilizce token sayısını karşılaştırır.
-
-### Bağımlılıklar
-
-Üç tokenizer modu var, ihtiyacına göre seç:
-
-```bash
-# 1. heuristic (paket gerekmez, kaba tahmin)
-python scripts/token_check.py --tokenizer heuristic "metin"
-
-# 2. tiktoken (yerel, hızlı, GPT-4 tokenizer'ı — Claude için yaklaşık)
-pip install tiktoken
-python scripts/token_check.py "metin"  # varsayılan
-
-# 3. anthropic (kesin Claude token sayısı, API çağrısı yapar)
-pip install anthropic
-export ANTHROPIC_API_KEY=sk-ant-...
-python scripts/token_check.py --tokenizer anthropic "metin"
+```
+/plugin install turkce-token-tasarrufu@skill-lab-hub
 ```
 
-### Kullanım
+Then start writing in Turkish — the skill triggers automatically (`pack:turkce-token-tasarrufu`).
+
+## Token measurement script
+
+`scripts/token_check.py` compares Turkish vs. English token counts.
+
+### Dependencies
+
+Three tokenizer modes — pick what fits:
 
 ```bash
-# İki metni karşılaştır
+# 1. heuristic (no package needed, rough estimate)
+python scripts/token_check.py --tokenizer heuristic "text"
+
+# 2. tiktoken (local, fast, GPT-4 tokenizer — approximate for Claude)
+pip install tiktoken
+python scripts/token_check.py "text"  # default
+
+# 3. anthropic (exact Claude token count, makes an API call)
+pip install anthropic
+export ANTHROPIC_API_KEY=sk-ant-...
+python scripts/token_check.py --tokenizer anthropic "text"
+```
+
+### Usage
+
+```bash
+# Compare two strings
 python scripts/token_check.py "Merhaba dünya" "Hello world"
 
-# Bir dosyanın token sayısı
-python scripts/token_check.py --file ornek.txt
+# Token count for a file
+python scripts/token_check.py --file sample.txt
 
-# İki dosyayı karşılaştır
+# Compare two files
 python scripts/token_check.py --file tr.md --english-file en.md
 ```
 
-## Hibrit modu kapatmak
+## Disabling hybrid mode
 
-Skill aktifken her şeyi Türkçe istersen Claude'a şunu söyle:
+If you want everything in Turkish while the skill is active, tell Claude:
 
-> "Her şey Türkçe olsun"
+> "Her şey Türkçe olsun" *(Everything in Turkish)*
 
-ya da
+or
 
-> "Yorumları da Türkçe yaz"
+> "Yorumları da Türkçe yaz" *(Write the comments in Turkish too)*
 
-Skill kendiliğinden devre dışı kalır.
+The skill steps aside on its own.
