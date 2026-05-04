@@ -13,18 +13,19 @@
     {
       "name": "pack",
       "version": "0.1.0",
-      "description": "Personal skills: Turkish token-saving hybrid mode and session-based GitHub bug reporter",
+      "description": "Personal skills: Turkish token-saving hybrid mode, session-based GitHub bug reporter and more..",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/session-bug-hunter",
+        "./skills/session-summarizer",
         "./skills/turkce-token-tasarrufu"
       ]
     },
     {
       "name": "turkce-token-tasarrufu",
       "version": "0.1.0",
-      "description": "Turkish token-saving hybrid mode — Türkçe konuşmalarda token kullanımını azaltır",
+      "description": "Turkish token-saving hybrid mode — reduces token usage in Turkish conversations",
       "source": "./",
       "strict": false,
       "skills": [
@@ -34,11 +35,21 @@
     {
       "name": "session-bug-hunter",
       "version": "0.1.0",
-      "description": "Session-based GitHub bug reporter — oturum boyunca hataları tespit edip GitHub issue açar",
+      "description": "Session-based GitHub bug reporter — detects issues throughout the session and opens GitHub issues",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/session-bug-hunter"
+      ]
+    },
+    {
+      "name": "session-summarizer",
+      "version": "0.1.0",
+      "description": "Session summarizer — produces a structured summary of the current session covering actions taken, decisions, open questions, and next steps",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/session-summarizer"
       ]
     }
   ]

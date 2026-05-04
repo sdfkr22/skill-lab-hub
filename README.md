@@ -11,6 +11,7 @@ Claude Code supports **plugins** — bundles of skills, commands, hooks, and age
 | Skill | Summary |
 |---|---|
 | [`session-bug-hunter`](skills/session-bug-hunter) | Scans the current Claude Code session (conversation + diff) for bugs and tech debt, then opens structured GitHub issues after your approval. |
+| [`session-summarizer`](skills/session-summarizer) | Turns the current session into a structured, language-matched summary covering goals, decisions, changes, open questions, and next steps. Triggered by "özetle" / "summarize". |
 | [`turkce-token-tasarrufu`](skills/turkce-token-tasarrufu) | Hybrid Turkish/English mode that cuts token usage ~40-50% in Turkish sessions by keeping internal work in English while user-facing chat stays Turkish. |
 
 Click a row for full docs and usage examples.
@@ -36,6 +37,7 @@ Skills become available under the `pack:` namespace (e.g. `pack:session-bug-hunt
 ```
 /plugin install turkce-token-tasarrufu@skill-lab-hub
 /plugin install session-bug-hunter@skill-lab-hub
+/plugin install session-summarizer@skill-lab-hub
 ```
 
 Each standalone plugin exposes its skill under its own namespace (e.g. `turkce-token-tasarrufu:turkce-token-tasarrufu`).
@@ -58,6 +60,9 @@ For local development, point the marketplace at a clone instead:
 ├── README.md
 └── skills/
     ├── session-bug-hunter/
+    │   ├── README.md
+    │   └── SKILL.md
+    ├── session-summarizer/
     │   ├── README.md
     │   └── SKILL.md
     └── turkce-token-tasarrufu/
